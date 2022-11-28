@@ -43,4 +43,10 @@ def load_approaches(cad_json_path):
     f = open(cad_json_path)
     data = json.load(f)
     f.close()
-    return data
+    array = []
+    keys = data['fields']
+
+    for item in data['data']:
+        temp = dict(zip(keys, item))
+        array.append(CloseApproach(temp))
+    return array

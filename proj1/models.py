@@ -87,7 +87,7 @@ class CloseApproach:
     """
     # TODO: How can you, and should you, change the arguments to this constructor?
     # If you make changes, be sure to update the comments in this file.
-    def __init__(self, **info):
+    def __init__(self, info):
         """Create a new `CloseApproach`.
 
         :param info: A dictionary of excess keyword arguments supplied to the constructor.
@@ -98,8 +98,8 @@ class CloseApproach:
         # The `cd_to_datetime` function will be useful.
         self._designation = info['des']
         self.time = cd_to_datetime(info['cd'])  # TODO: Use the cd_to_datetime function for this attribute.
-        self.distance = info['dist']
-        self.velocity = info['v_rel']
+        self.distance = float(info['dist'])
+        self.velocity = float(info['v_rel'])
 
         # Create an attribute for the referenced NEO, originally None.
         self.neo = None
